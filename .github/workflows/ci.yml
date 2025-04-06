@@ -50,7 +50,7 @@ jobs:
       uses: docker/metadata-action@v3
       with:
         images: |
-          akoricansky/ambulance-ufe
+          akoricansky/project-counseling
         tags: |
           type=schedule
           type=ref,event=branch
