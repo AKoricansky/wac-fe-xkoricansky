@@ -11,7 +11,7 @@ describe('my-component', () => {
       <my-component>
         <mock:shadow-root>
           <div>
-            Hello, World! I'm
+            
           </div>
         </mock:shadow-root>
       </my-component>
@@ -21,13 +21,13 @@ describe('my-component', () => {
   it('renders with values', async () => {
     const { root } = await newSpecPage({
       components: [MyComponent],
-      html: `<my-component first="Stencil" middle="'Don't call me a framework'" last="JS"></my-component>`,
+      html: `<my-component first="Projekt xkoricansky - Odborné poradenstvo"></my-component>`,
     });
     expect(root).toEqualHtml(`
-      <my-component first="Stencil" middle="'Don't call me a framework'" last="JS">
+      <my-component first="Projekt xkoricansky - Odborné poradenstvo">
         <mock:shadow-root>
           <div>
-            Projekt xkoricansky
+            Projekt xkoricansky - Odborné poradenstvo
           </div>
         </mock:shadow-root>
       </my-component>
