@@ -60,3 +60,12 @@ jobs:
           type=semver,pattern={{major}}.{{minor}} # napr `1.0`
           type=semver,pattern={{major}}
           type=raw,value=latest,enable={{is_default_branch}} # `latest` pre každý komit do main vetvy
+
+    - uses: docker/build-push-action@v2
+      with:
+        context: .
+        platforms: linux/amd64,linux/arm64/v8
+        file: ./build/docker/Dockerfile
+        push: true
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
