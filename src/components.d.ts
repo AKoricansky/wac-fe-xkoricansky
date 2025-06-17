@@ -5,70 +5,187 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Question } from "./api/ak-ambulance-counseling-wl";
+export { Question } from "./api/ak-ambulance-counseling-wl";
 export namespace Components {
-    interface AkAmbulanceCounselingList {
+    interface AkAmbulanceCounselingWlApp {
+        "ambulanceId": string;
+        "apiBase": string;
+        "basePath": string;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface AkAmbulanceCounselingWlAuth {
+        "apiBase": string;
+        "currentScreen": string;
+    }
+    interface AkAmbulanceCounselingWlEditor {
+        "apiBase": string;
+        "entryId": string;
+        "mode": 'question' | 'reply';
+        "replyId": string;
+    }
+    interface AkAmbulanceCounselingWlList {
+        "apiBase": string;
+    }
+    interface AkAmbulanceCounselingWlQuestion {
+        "apiBase": string;
+        "questionId": string;
     }
 }
+export interface AkAmbulanceCounselingWlAuthCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAkAmbulanceCounselingWlAuthElement;
+}
+export interface AkAmbulanceCounselingWlEditorCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAkAmbulanceCounselingWlEditorElement;
+}
+export interface AkAmbulanceCounselingWlListCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAkAmbulanceCounselingWlListElement;
+}
+export interface AkAmbulanceCounselingWlQuestionCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAkAmbulanceCounselingWlQuestionElement;
+}
 declare global {
-    interface HTMLAkAmbulanceCounselingListElement extends Components.AkAmbulanceCounselingList, HTMLStencilElement {
+    interface HTMLAkAmbulanceCounselingWlAppElement extends Components.AkAmbulanceCounselingWlApp, HTMLStencilElement {
     }
-    var HTMLAkAmbulanceCounselingListElement: {
-        prototype: HTMLAkAmbulanceCounselingListElement;
-        new (): HTMLAkAmbulanceCounselingListElement;
+    var HTMLAkAmbulanceCounselingWlAppElement: {
+        prototype: HTMLAkAmbulanceCounselingWlAppElement;
+        new (): HTMLAkAmbulanceCounselingWlAppElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLAkAmbulanceCounselingWlAuthElementEventMap {
+        "auth-change": boolean;
+        "new-question-clicked": string;
+        "question-closed": string;
+        "reply-clicked": string;
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    interface HTMLAkAmbulanceCounselingWlAuthElement extends Components.AkAmbulanceCounselingWlAuth, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAkAmbulanceCounselingWlAuthElementEventMap>(type: K, listener: (this: HTMLAkAmbulanceCounselingWlAuthElement, ev: AkAmbulanceCounselingWlAuthCustomEvent<HTMLAkAmbulanceCounselingWlAuthElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAkAmbulanceCounselingWlAuthElementEventMap>(type: K, listener: (this: HTMLAkAmbulanceCounselingWlAuthElement, ev: AkAmbulanceCounselingWlAuthCustomEvent<HTMLAkAmbulanceCounselingWlAuthElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLAkAmbulanceCounselingWlAuthElement: {
+        prototype: HTMLAkAmbulanceCounselingWlAuthElement;
+        new (): HTMLAkAmbulanceCounselingWlAuthElement;
+    };
+    interface HTMLAkAmbulanceCounselingWlEditorElementEventMap {
+        "editor-closed": string;
+    }
+    interface HTMLAkAmbulanceCounselingWlEditorElement extends Components.AkAmbulanceCounselingWlEditor, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAkAmbulanceCounselingWlEditorElementEventMap>(type: K, listener: (this: HTMLAkAmbulanceCounselingWlEditorElement, ev: AkAmbulanceCounselingWlEditorCustomEvent<HTMLAkAmbulanceCounselingWlEditorElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAkAmbulanceCounselingWlEditorElementEventMap>(type: K, listener: (this: HTMLAkAmbulanceCounselingWlEditorElement, ev: AkAmbulanceCounselingWlEditorCustomEvent<HTMLAkAmbulanceCounselingWlEditorElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLAkAmbulanceCounselingWlEditorElement: {
+        prototype: HTMLAkAmbulanceCounselingWlEditorElement;
+        new (): HTMLAkAmbulanceCounselingWlEditorElement;
+    };
+    interface HTMLAkAmbulanceCounselingWlListElementEventMap {
+        "entry-clicked": string;
+    }
+    interface HTMLAkAmbulanceCounselingWlListElement extends Components.AkAmbulanceCounselingWlList, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAkAmbulanceCounselingWlListElementEventMap>(type: K, listener: (this: HTMLAkAmbulanceCounselingWlListElement, ev: AkAmbulanceCounselingWlListCustomEvent<HTMLAkAmbulanceCounselingWlListElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAkAmbulanceCounselingWlListElementEventMap>(type: K, listener: (this: HTMLAkAmbulanceCounselingWlListElement, ev: AkAmbulanceCounselingWlListCustomEvent<HTMLAkAmbulanceCounselingWlListElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLAkAmbulanceCounselingWlListElement: {
+        prototype: HTMLAkAmbulanceCounselingWlListElement;
+        new (): HTMLAkAmbulanceCounselingWlListElement;
+    };
+    interface HTMLAkAmbulanceCounselingWlQuestionElementEventMap {
+        "question-closed": string;
+        "question-clicked": string;
+        "reply-clicked": [string, string];
+        "question-loaded": Question;
+    }
+    interface HTMLAkAmbulanceCounselingWlQuestionElement extends Components.AkAmbulanceCounselingWlQuestion, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAkAmbulanceCounselingWlQuestionElementEventMap>(type: K, listener: (this: HTMLAkAmbulanceCounselingWlQuestionElement, ev: AkAmbulanceCounselingWlQuestionCustomEvent<HTMLAkAmbulanceCounselingWlQuestionElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAkAmbulanceCounselingWlQuestionElementEventMap>(type: K, listener: (this: HTMLAkAmbulanceCounselingWlQuestionElement, ev: AkAmbulanceCounselingWlQuestionCustomEvent<HTMLAkAmbulanceCounselingWlQuestionElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLAkAmbulanceCounselingWlQuestionElement: {
+        prototype: HTMLAkAmbulanceCounselingWlQuestionElement;
+        new (): HTMLAkAmbulanceCounselingWlQuestionElement;
     };
     interface HTMLElementTagNameMap {
-        "ak-ambulance-counseling-list": HTMLAkAmbulanceCounselingListElement;
-        "my-component": HTMLMyComponentElement;
+        "ak-ambulance-counseling-wl-app": HTMLAkAmbulanceCounselingWlAppElement;
+        "ak-ambulance-counseling-wl-auth": HTMLAkAmbulanceCounselingWlAuthElement;
+        "ak-ambulance-counseling-wl-editor": HTMLAkAmbulanceCounselingWlEditorElement;
+        "ak-ambulance-counseling-wl-list": HTMLAkAmbulanceCounselingWlListElement;
+        "ak-ambulance-counseling-wl-question": HTMLAkAmbulanceCounselingWlQuestionElement;
     }
 }
 declare namespace LocalJSX {
-    interface AkAmbulanceCounselingList {
+    interface AkAmbulanceCounselingWlApp {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
+        "basePath"?: string;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface AkAmbulanceCounselingWlAuth {
+        "apiBase"?: string;
+        "currentScreen"?: string;
+        "onAuth-change"?: (event: AkAmbulanceCounselingWlAuthCustomEvent<boolean>) => void;
+        "onNew-question-clicked"?: (event: AkAmbulanceCounselingWlAuthCustomEvent<string>) => void;
+        "onQuestion-closed"?: (event: AkAmbulanceCounselingWlAuthCustomEvent<string>) => void;
+        "onReply-clicked"?: (event: AkAmbulanceCounselingWlAuthCustomEvent<string>) => void;
+    }
+    interface AkAmbulanceCounselingWlEditor {
+        "apiBase"?: string;
+        "entryId"?: string;
+        "mode"?: 'question' | 'reply';
+        "onEditor-closed"?: (event: AkAmbulanceCounselingWlEditorCustomEvent<string>) => void;
+        "replyId"?: string;
+    }
+    interface AkAmbulanceCounselingWlList {
+        "apiBase"?: string;
+        "onEntry-clicked"?: (event: AkAmbulanceCounselingWlListCustomEvent<string>) => void;
+    }
+    interface AkAmbulanceCounselingWlQuestion {
+        "apiBase"?: string;
+        "onQuestion-clicked"?: (event: AkAmbulanceCounselingWlQuestionCustomEvent<string>) => void;
+        "onQuestion-closed"?: (event: AkAmbulanceCounselingWlQuestionCustomEvent<string>) => void;
+        "onQuestion-loaded"?: (event: AkAmbulanceCounselingWlQuestionCustomEvent<Question>) => void;
+        "onReply-clicked"?: (event: AkAmbulanceCounselingWlQuestionCustomEvent<[string, string]>) => void;
+        "questionId"?: string;
     }
     interface IntrinsicElements {
-        "ak-ambulance-counseling-list": AkAmbulanceCounselingList;
-        "my-component": MyComponent;
+        "ak-ambulance-counseling-wl-app": AkAmbulanceCounselingWlApp;
+        "ak-ambulance-counseling-wl-auth": AkAmbulanceCounselingWlAuth;
+        "ak-ambulance-counseling-wl-editor": AkAmbulanceCounselingWlEditor;
+        "ak-ambulance-counseling-wl-list": AkAmbulanceCounselingWlList;
+        "ak-ambulance-counseling-wl-question": AkAmbulanceCounselingWlQuestion;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ak-ambulance-counseling-list": LocalJSX.AkAmbulanceCounselingList & JSXBase.HTMLAttributes<HTMLAkAmbulanceCounselingListElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "ak-ambulance-counseling-wl-app": LocalJSX.AkAmbulanceCounselingWlApp & JSXBase.HTMLAttributes<HTMLAkAmbulanceCounselingWlAppElement>;
+            "ak-ambulance-counseling-wl-auth": LocalJSX.AkAmbulanceCounselingWlAuth & JSXBase.HTMLAttributes<HTMLAkAmbulanceCounselingWlAuthElement>;
+            "ak-ambulance-counseling-wl-editor": LocalJSX.AkAmbulanceCounselingWlEditor & JSXBase.HTMLAttributes<HTMLAkAmbulanceCounselingWlEditorElement>;
+            "ak-ambulance-counseling-wl-list": LocalJSX.AkAmbulanceCounselingWlList & JSXBase.HTMLAttributes<HTMLAkAmbulanceCounselingWlListElement>;
+            "ak-ambulance-counseling-wl-question": LocalJSX.AkAmbulanceCounselingWlQuestion & JSXBase.HTMLAttributes<HTMLAkAmbulanceCounselingWlQuestionElement>;
         }
     }
 }

@@ -1,0 +1,28 @@
+:host {
+  display: block;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.app-header {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.app-content {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  :host {
+    padding: 15px;
+  }
+  
+  .app-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+}

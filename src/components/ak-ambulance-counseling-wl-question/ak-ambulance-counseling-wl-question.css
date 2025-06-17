@@ -1,0 +1,42 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.back-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.doctor-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.question-buttons {
+  display: flex;
+  flex-direction: row;
+}
+.back-btn-div,
+.reply-btn-div {
+  display: flex;
+  align-items: center;
+}
+.back-button,
+.reply-button {
+  --md-filled-icon-button-container-size: 3rem;
+  --md-filled-icon-button-icon-size: 2rem;
+  margin: 0;
+  bottom: 1rem;
+}

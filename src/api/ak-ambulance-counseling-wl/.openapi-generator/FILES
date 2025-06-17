@@ -1,0 +1,13 @@
+.openapi-generator-ignore
+apis/AmbulanceCounselingApi.ts
+apis/AmbulanceCounselingAuthApi.ts
+apis/index.ts
+index.ts
+models/LoginForm.ts
+models/Question.ts
+models/RegistrationForm.ts
+models/Reply.ts
+models/User.ts
+models/UserLogin200Response.ts
+models/index.ts
+runtime.ts
