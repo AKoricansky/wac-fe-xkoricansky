@@ -1,0 +1,12 @@
+name: Release CI
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  echo-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say something
+        run: echo "🎉 This runs only on a new release!"
